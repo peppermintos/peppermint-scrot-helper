@@ -12,6 +12,7 @@ shot_type=$(zenity --title="Screen capture" --list --text "Choose your screensho
     --column "Select" --column "Options" \
     TRUE "Fullscreen" \
     FALSE "Mouse Selection" \
+    FALSE "Active Window" \
     --separator=":");
 
 if [[ ! $shot_file == "~/"* ]]; then
@@ -27,10 +28,13 @@ fi
 if [ ! $shot_file = "" ]; then
     case $shot_type in
         "Fullscreen") 
-            scrot "$shot_file"
+            scrot -d 3 "$shot_file"
             ;;
         "Mouse Selection")
-            scrot -s $shot_file
+            scrot -s "$shot_file"
+            ;;
+        "Active Window")
+            scrot -d 3 -u "$shot_file"
             ;;
         *)
             scrot $shot_file
