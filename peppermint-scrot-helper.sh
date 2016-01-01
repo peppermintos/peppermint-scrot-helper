@@ -4,7 +4,7 @@
 shot_dir="$HOME/Desktop";
 
 shot_file=$(zenity --title="Screen Capture" --forms title="Filename to save" \
-    --text="NOTE: By default the file is stored in /home/USERNAME/Pictures/Screenshots" \
+    --text="NOTE: By default the file is stored in /home/USERNAME/Desktop" \
     --add-entry="Save as" \
     --separator=":");
 
