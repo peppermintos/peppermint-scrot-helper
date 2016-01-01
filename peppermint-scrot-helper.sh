@@ -3,36 +3,35 @@
 
 shot_dir="$HOME/Desktop";
 
-shot_file=$(zenity --title="Screen Capture" --forms title="Filename to save" \
-    --text="NOTE: By default the file is stored in /home/USERNAME/Desktop" \
-    --add-entry="Save as" \
-    --separator=":");
+# shot_file=$(zenity --title="Screen Capture" --forms title="Filename to save" \
+#     --text="NOTE: The screenshot will be saved to your desktop" \
+#     --add-entry="Save as" \
+#     --separator=":");
 
-shot_type=$(zenity --title="Screen capture" --list --text "Choose your screenshot type:" --radiolist \
+shot_type=$(zenity --title="Screen Capture (to desktop)" --list --text "Choose your screenshot type:" --radiolist \
     --column "Select" --column "Options" \
     TRUE "Fullscreen" \
-    FALSE "Mouse Selection" \
     FALSE "Active Window" \
+    FALSE "Mouse Selection" \
     --separator=":");
 
-if [[ ! $shot_file == "~/"* ]]; then
-    cd "$shot_dir";
-else
-    shot_file=$HOME/${shot_file:2};
-fi
+# if [ ! -d $shot_dir ]; then
+#     mkdir -p "$shot_dir";
 
-if [ ! $shot_file = "" ]; then
-    case $shot_type in
-        "Fullscreen") 
-            scrot -d 3 "$shot_file"
-            ;;
-        "Mouse Selection")
-            scrot -s "$shot_file"
-            ;;
-        "Active Window")
-            scrot -d 3 -u "$shot_file"
-            ;;
-        *)
-            scrot $shot_file
-    esac
-fi
+# fi
+
+cd "$shot_dir";
+
+case $shot_type in
+    "Fullscreen")
+        scrot -d 1 "Screenshot_%Y-%m-%d_%H:%M:%S.png"
+        ;;
+    "Active Window")
+        scrot -d 1 -u -b "$Windowshot_%Y-%m-%d_%H:%M:%S.png"
+        ;;
+    "Mouse Selection")
+        scrot -s "Selectionshot_%Y-%m-%d_%H:%M:%S.png"
+        ;;
+    *)
+        scrot -d 1 "Screenshot_%Y-%m-%d_%H:%M:%S.png"
+esac
