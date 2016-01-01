@@ -1,12 +1,6 @@
 #!/bin/bash
 
-
 shot_dir="$HOME/Desktop";
-
-# shot_file=$(zenity --title="Screen Capture" --forms title="Filename to save" \
-#     --text="NOTE: The screenshot will be saved to your desktop" \
-#     --add-entry="Save as" \
-#     --separator=":");
 
 shot_type=$(zenity --title="Screen Capture (to desktop)" --list --text "Choose your screenshot type:" --radiolist \
     --column "Select" --column "Options" \
@@ -14,11 +8,6 @@ shot_type=$(zenity --title="Screen Capture (to desktop)" --list --text "Choose y
     FALSE "Active Window" \
     FALSE "Mouse Selection" \
     --separator=":");
-
-# if [ ! -d $shot_dir ]; then
-#     mkdir -p "$shot_dir";
-
-# fi
 
 cd "$shot_dir";
 
