@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-shot_dir="$HOME/Pictures/Screenshots";
+shot_dir="$HOME/Desktop";
 
 shot_file=$(zenity --title="Screen Capture" --forms title="Filename to save" \
     --text="NOTE: By default the file is stored in /home/USERNAME/Pictures/Screenshots" \
@@ -16,10 +16,6 @@ shot_type=$(zenity --title="Screen capture" --list --text "Choose your screensho
     --separator=":");
 
 if [[ ! $shot_file == "~/"* ]]; then
-    if [ ! -d $shot_dir ]; then
-        mkdir -p "$shot_dir";
-    fi
-
     cd "$shot_dir";
 else
     shot_file=$HOME/${shot_file:2};
