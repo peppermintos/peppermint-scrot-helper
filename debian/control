@@ -1,0 +1,14 @@
+Source: peppermint-scrot-helper
+Section: x11
+Priority: optional
+Maintainer: Brian Tomlinson <brian@peppermintos.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Vcs-Git: https://github.com/peppermintos/peppermint-scrot-helper.git
+Vcs-browser: https://github.com/peppermintos/peppermint-scrot-helper
+Homepage: https://peppermintos.com 
+
+Package: peppermint-scrot-helper
+Architecture: all
+Depends: zenity (>= 3.8.0), scrot (>= 0.8)
+Description: Peppermint Screenshot helper wrapping scrot.
