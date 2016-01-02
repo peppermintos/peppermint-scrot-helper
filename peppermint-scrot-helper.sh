@@ -16,7 +16,7 @@ case $shot_type in
         scrot -d 1 "Screenshot_%Y-%m-%d_%H:%M:%S.png"
         ;;
     "Active Window")
-        scrot -d 1 -u -b "$Windowshot_%Y-%m-%d_%H:%M:%S.png"
+        scrot -d 1 -u -b "Windowshot_%Y-%m-%d_%H:%M:%S.png"
         ;;
     "Mouse Selection")
         scrot -s "Selectionshot_%Y-%m-%d_%H:%M:%S.png"
