@@ -10,5 +10,5 @@ Homepage: https://peppermintos.com
 
 Package: peppermint-scrot-helper
 Architecture: all
-Depends: zenity (>= 3.8.0), scrot (>= 0.8)
+Depends: ${misc:Depends}, zenity (>= 3.8.0), scrot (>= 0.8)
 Description: Peppermint Screenshot helper wrapping scrot.
