@@ -1,8 +1,8 @@
 peppermint-scrot-helper (0.1) UNRELEASED; urgency=low
 
- * Initial release.
- * Set default screenshot destination to $HOME/Desktop
- * Added Fullscreen, Mouse Selection, and Active Window options
+  * Initial release.
+  * Set default screenshot destination to $HOME/Desktop
+  * Added Fullscreen, Mouse Selection, and Active Window options
 
--- Brian Tomlinson <brian@peppermintos.com> Fri, 1 Jan 2016 16:00:00 +0100
+ -- Brian Tomlinson <brian@peppermintos.com>  Fri, 1 Jan 2016 16:00:00 +0100
 
